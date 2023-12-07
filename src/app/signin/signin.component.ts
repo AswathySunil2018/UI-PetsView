@@ -23,7 +23,7 @@ err="";
       email:['',[Validators.required,Validators.email]],
       password:['',Validators.required],
       confmpass:['',Validators.required],
-      confmpass1:['',Validators.required],
+      
     })
   }
   register()
