@@ -34,6 +34,7 @@ err="";
       "email" : this.signinForm.controls['email'].value,
       "password" : this.signinForm.controls['password'].value,
     };
+    alert("Successfully Registered");
    
   }
 
