@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 @Component({
@@ -7,10 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+ 
 loginForm!:FormGroup;
 submitted!:boolean;
 flag=0;
-str="";
+str="ed";
   constructor(private formBuilder:FormBuilder,private router:Router) { }
 
   ngOnInit(): void {
@@ -25,7 +26,9 @@ this.flag=1;
   }
   if(this.flag==1){
     
-    this.router.navigate(['/userhome']);
+   
+    this.router.navigate(['/userhome',this.loginForm.get('username')?.value]);
+    
   }
   else{
     
