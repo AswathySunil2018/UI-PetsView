@@ -34,7 +34,18 @@ err="";
       "email" : this.signinForm.controls['email'].value,
       "password" : this.signinForm.controls['password'].value,
     };
-    alert("Successfully Registered");
+    
+    if(this.signinForm.get('password')?.value==this.signinForm.get('confmpass')?.value)
+    {
+   this.http.post("http://localhost:3000/user/signin",bodyData).subscribe(data=>{
+    console.log(data);
+     alert("Registered Successfully");
+
+   });
+  }
+  else{
+    alert("Password mismatch")
+  }
    
   }
 
