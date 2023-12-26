@@ -7,12 +7,18 @@ import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserloginComponent } from './userlogin/userlogin.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { DogComponent } from './dog/dog.component';
+import { AccessoriesComponent } from './accessories/accessories.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SigninComponent,
-    UserloginComponent
+    UserloginComponent,
+    CategoriesComponent,
+    DogComponent,
+    AccessoriesComponent
   ],
   imports: [
     BrowserModule,

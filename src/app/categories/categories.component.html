@@ -1,0 +1,11 @@
+<div class="subgrid">
+   <div class="card" style="width: 18rem;" *ngFor="let i of category" >
+    <img class="card-img-top" src="{{i.url}}" alt="Card image cap">
+    <span class="card-body">
+      <h5 class="card-title">{{i.Cat_name|uppercase}}</h5>
+      <p class="card-text">{{i.description}}</p>
+      
+      <a href="/{{i.page}}" class="btn btn-primary">View</a>
+    </span>
+  </div>
+  </div>
