@@ -1,1 +1,32 @@
-<p>dog works!</p>
+<div class="search">
+    <input type="text" placeholder="Search for product name..." size="50" #tabsearch>  
+    <button class="btn btn-info"  (click)="getSpecificDog(tabsearch.value)"> Search</button>
+  </div>
+ 
+
+<div class="subgrid">
+<div class="card" style="width: 18rem;" *ngFor="let i of dogsDetail">
+ 
+        
+    <img class="card-img-top" src="{{i.image}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{i.name|uppercase}}</h5>
+      <p class="card-text">{{i.desc}}</p>
+      <a (click)="hid=!hid" class="text text-warning">more...</a>
+      <div  [hidden]="hid">
+<ul class="list">
+    <li>{{i.color}}</li>
+    <li>{{i.origin}}</li>
+    <li>{{i.coat}}</li>
+    <li>{{i.hypoallergenic}}</li>
+    <li>{{i.food}}</li>
+    <li>{{i.temperament}}</li>
+    <li>{{i.life}}</li>
+    <li>{{i.weight}}</li>
+    <li>{{i.price|currency:'INR'}}</li>
+</ul>
+<button class="btn btn-warning">BUY</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-warning ">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  </div>

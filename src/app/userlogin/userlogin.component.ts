@@ -7,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UserloginComponent implements OnInit {
 val="";
+badge=0;
   constructor(private route:ActivatedRoute) { }
 
   ngOnInit(): void {
