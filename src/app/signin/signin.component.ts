@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,Validators,FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -10,7 +11,7 @@ export class SigninComponent implements OnInit {
 signinForm!:FormGroup;
 valid!:boolean;
 err="";
-  constructor(private formBuilder:FormBuilder,private http:HttpClient) { }
+  constructor(private formBuilder:FormBuilder,private http:HttpClient,private route:Router) { }
 
   ngOnInit(): void {
     this.signinForm=this.formBuilder.group({
@@ -39,7 +40,11 @@ err="";
     {
    this.http.post("http://localhost:3000/user/signin",bodyData).subscribe(data=>{
     console.log(data);
-     alert("Registered Successfully");
+    if(confirm("Registered successfully" )){
+
+    this.route.navigate(['/login'])
+      
+      }
 
    });
   }

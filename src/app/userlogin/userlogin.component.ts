@@ -8,12 +8,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UserloginComponent implements OnInit {
 val="";
 badge=0;
-  constructor(private route:ActivatedRoute) { }
+  constructor(private route:ActivatedRoute,private rot:Router) { }
 
   ngOnInit(): void {
 
   this.val=this.route.snapshot.params['user']
  
  
+  }
+  cartfun(){
+    this.rot.navigate(['/cart'])
   }
 }

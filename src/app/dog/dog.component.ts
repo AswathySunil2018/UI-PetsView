@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Dog } from './dog';
 import { DogService } from './dog.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-dog',
   templateUrl: './dog.component.html',
@@ -9,7 +10,7 @@ import { DogService } from './dog.service';
 export class DogComponent implements OnInit {
 dogsDetail!:Dog[]
 hid=true;
-  constructor(private dogserv:DogService) { }
+  constructor(private dogserv:DogService,private route:Router) { }
 
   ngOnInit(): void {
     this.dogserv.getDog().subscribe(res=>{
@@ -29,5 +30,8 @@ break;
 
   
 })
-  }
+}
+payment(){
+this.route.navigate(['/payment'])
+}
 }

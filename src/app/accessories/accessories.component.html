@@ -1,1 +1,27 @@
-<p>accessories works!</p>
+<div class="search">
+    <input type="text" placeholder="Search for product name..." size="50" #tabsearch>  
+    <button class="btn btn-info"  (click)="getSpecificAccess(tabsearch.value)"> Search</button>
+  </div>
+ 
+
+<div class="subgrid">
+<div class="card" style="width: 18rem;" *ngFor="let i of access">
+ 
+        
+    <img class="card-img-top" src="{{i.image}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{i.name|titlecase}}</h5>
+      <div>
+        <p class="card-text">color:{{i.color}}</p>
+        <p class="card-text">material:{{i.material}}</p>
+    
+      </div>
+      
+<br>
+<br>
+
+<button class="btn btn-warning" (click)="payment()">BUY</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-warning ">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+ 

@@ -10,6 +10,8 @@ import { UserloginComponent } from './userlogin/userlogin.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { DogComponent } from './dog/dog.component';
 import { AccessoriesComponent } from './accessories/accessories.component';
+import { PaymentComponent } from './payment/payment.component';
+import { CartComponent } from './cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,9 @@ import { AccessoriesComponent } from './accessories/accessories.component';
     UserloginComponent,
     CategoriesComponent,
     DogComponent,
-    AccessoriesComponent
+    AccessoriesComponent,
+    PaymentComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
